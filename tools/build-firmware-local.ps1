@@ -108,6 +108,10 @@ foreach ($define in $ExtraDefine) {
 $cppFlags = "-DHOMETILES_CI_TARGET -D$($buildProfile.define) $($extraDefineFlags -join ' ') $commonFlags"
 $cFlags = $cppFlags
 $elfFlags = $buildProfile.elfFlags
+# Devices with a smaller flash chip than the shared 16MB+ layout (see
+# partitions.csv) point PartitionScheme=custom at their own correctly-sized
+# table via this override instead.
+$partitionsFile = if ($buildProfile.partitionsFile) { $buildProfile.partitionsFile } else { 'partitions' }
 
 Move-Item -LiteralPath $sketchProfiles -Destination $hiddenSketchProfiles
 try {
@@ -123,6 +127,7 @@ try {
         --build-property "compiler.c.extra_flags=$cFlags" `
         --build-property "compiler.cpp.extra_flags=$cppFlags" `
         --build-property "compiler.c.elf.extra_flags=$elfFlags" `
+        --build-property "build.partitions=$partitionsFile" `
         $repoRoot
     if ($LASTEXITCODE -ne 0) {
         throw "Arduino build failed for profile '$Profile'."

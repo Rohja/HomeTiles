@@ -34,6 +34,7 @@ const matrix = [...releaseProfiles].sort((a, b) => a.ciOrder - b.ciOrder).map((p
   ...(profile.metadataDeviceKey !== profile.key ? [`            metadata_key: ${profile.metadataDeviceKey}`] : []),
   `            define: ${profile.define}`,
   ...(profile.siliconVariant !== 'default' ? [`            silicon_variant: ${profile.siliconVariant}`] : []),
+  ...(profile.partitionsFile ? [`            partitions_file: ${profile.partitionsFile}`] : []),
   `            rx_variant: ${profile.rxVariant}`,
   '            publish: true',
 ].join('\n')).join('\n');

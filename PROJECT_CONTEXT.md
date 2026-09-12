@@ -30,6 +30,14 @@ Last reviewed: 2026-09-11
 - P4 application code is shared; panel/touch controllers, initialization, timing, board revision and firmware images remain exact-profile concerns.
 - LCD-4 Rev 4.0 has contributor-tested display/touch/Wi-Fi/MQTT/Web OTA;
   older revisions and SD access are unsupported. See `docs/index.md` for validation.
+- Waveshare ESP32-S3-Touch-LCD-7 (`waveshare_s3_touch_lcd_7`) was added from
+  vendor documentation and the vendor's official example firmware repository
+  only; no maintainer or contributor hardware exists. It is the first 8MB
+  flash device (`partitions_8mb.csv` via a `build.partitions` override, not
+  the shared 16MB+ `partitions.csv`) and the first CH422G IO-expander device
+  in this repo. A compile has not been confirmed in this environment either
+  (no Arduino/ESP32 toolchain installed); OTA app slot sizing in
+  `partitions_8mb.csv` is an unverified placeholder pending a real build.
 
 ## Active problem: GitHub issue #30
 

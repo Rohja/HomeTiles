@@ -430,7 +430,6 @@ Important:
 - This exact board has no microSD interface. Runtime files use LittleFS, and
   Camera tiles are unavailable on this ESP32-S3 profile.
 - Use the repository's `partitions.csv`; HomeTiles needs two 6.5MB OTA slots.
-
 Arduino IDE:
 - Board: `ESP32S3 Dev Module`
 - USB CDC On Boot: `Enabled`
@@ -440,6 +439,59 @@ Arduino IDE:
 - Erase All Flash Before Sketch Upload: `Disabled`
 - Flash Mode: `QIO 80MHz`
 - Flash Size: `16MB (128Mb)`
+- JTAG Adapter: `Disabled`
+- USB Firmware MSC On Boot: `Disabled`
+- Partition Scheme: `Custom`
+- PSRAM: `OPI PSRAM`
+- Upload Mode: `UART0 / Hardware CDC`
+- Upload Speed: `921600`
+- USB Mode: `Hardware CDC and JTAG`
+
+## Waveshare ESP32-S3-Touch-LCD-7
+
+Used for:
+- `src/devices/waveshare_s3_touch_lcd_7`
+- build profile `waveshare_s3_touch_lcd_7`
+
+Important:
+- **No maintainer or contributor hardware exists for this profile.** It was
+  added from vendor documentation and the vendor's official example firmware
+  only (`docs.waveshare.com/ESP32-S3-Touch-LCD-7` and
+  `github.com/waveshareteam/ESP32-S3-Touch-LCD-7`); it compiles but display,
+  touch, backlight, SD, Wi-Fi, and OTA are all unverified on real hardware.
+- This profile is only for the exact Waveshare ESP32-S3-Touch-LCD-7. It is
+  not the ESP32-P4 "Waveshare Touch LCD 7" profile (`waveshare_touch_lcd_7`),
+  which is a different chip, display interface (MIPI-DSI), and panel
+  controller (ILI9881C) despite the similar name.
+- ESP32-S3-WROOM-1-N8R8: `8MB` flash and `8MB` octal PSRAM — smaller than
+  every other HomeTiles device. It cannot use the shared `partitions.csv`
+  (documented there as for boards with at least 16MB flash); this profile
+  uses `partitions_8mb.csv` via a `build.partitions` override, not the
+  Partition Scheme menu. The two 3MB OTA app slots in that table are a
+  placeholder sized from other ESP32-S3 profiles' compiled image sizes and
+  have not been confirmed against a real compile of this exact profile.
+- The panel is an `800x480` ST7262 RGB display (no command interface) using
+  the vendor's 16MHz pixel clock and porch timings.
+- Capacitive touch is GT911 on SDA GPIO8 / SCL GPIO9, interrupt on GPIO4.
+- A CH422G I2C IO expander (same bus as touch) drives LCD reset, backlight
+  on/off, touch reset, and SD chip-select. This is a different chip and
+  protocol from the TCA9554-class expander used by
+  Waveshare ESP32-S3-Touch-LCD-4B.
+- The backlight is an on/off switch line only; there is no PWM dimming on
+  this board.
+- microSD over SPI (MOSI GPIO11, SCK GPIO12, MISO GPIO13). Chip-select is on
+  the CH422G expander, not a native GPIO; it is asserted once and held low
+  for the session.
+
+Arduino IDE:
+- Board: `ESP32S3 Dev Module`
+- USB CDC On Boot: `Enabled`
+- CPU Frequency: `240MHz (WiFi)`
+- Core Debug Level: `None`
+- USB DFU On Boot: `Disabled`
+- Erase All Flash Before Sketch Upload: `Disabled`
+- Flash Mode: `QIO 80MHz`
+- Flash Size: `8MB (64Mb)`
 - JTAG Adapter: `Disabled`
 - USB Firmware MSC On Boot: `Disabled`
 - Partition Scheme: `Custom`

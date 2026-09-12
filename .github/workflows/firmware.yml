@@ -214,6 +214,13 @@ jobs:
             define: DEVICE_WAVESHARE_S3_TOUCH_LCD_4B
             rx_variant: native-s3
             publish: true
+          - label: Waveshare ESP32-S3 Touch LCD 7
+            profile: waveshare_s3_touch_lcd_7
+            key: waveshare_s3_touch_lcd_7
+            define: DEVICE_WAVESHARE_S3_TOUCH_LCD_7
+            partitions_file: partitions_8mb
+            rx_variant: native-s3
+            publish: true
         # END GENERATED DEVICE MATRIX
 
     steps:
@@ -350,13 +357,18 @@ jobs:
           if [ "${profile}" = "guition_jc8012p4a1" ]; then
             elf_flags="-Wl,--wrap=esp_hosted_get_default_sdio_config"
           fi
+          # Devices with a smaller flash chip than the shared 16MB+ layout
+          # (see partitions.csv) point PartitionScheme=custom at their own
+          # correctly-sized table via this override instead.
+          partitions_file="${{ matrix.partitions_file || 'partitions' }}"
           arduino-cli compile \
             --fqbn "${fqbn}" \
             --export-binaries \
             --output-dir "build/ci/${{ matrix.key }}" \
             --build-property "compiler.c.extra_flags=-DHOMETILES_CI_TARGET -D${{ matrix.define }} $common_flags" \
             --build-property "compiler.cpp.extra_flags=-DHOMETILES_CI_TARGET -D${{ matrix.define }} $common_flags" \
-            --build-property "compiler.c.elf.extra_flags=${elf_flags}"
+            --build-property "compiler.c.elf.extra_flags=${elf_flags}" \
+            --build-property "build.partitions=${partitions_file}"
 
           restore_sketch_profiles
           trap - EXIT

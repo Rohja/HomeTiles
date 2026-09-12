@@ -26,7 +26,11 @@ function validateCatalog(catalog) {
     assert(/^DEVICE_[A-Z0-9_]+$/.test(profile.define), `invalid define for ${profile.key}`);
     assert(Buffer.byteLength(profile.metadataDeviceKey) < 32, `metadata key too long for ${profile.key}`);
     assert(['ESP32-P4', 'ESP32-S3'].includes(profile.chipFamily), `invalid chip family for ${profile.key}`);
-    assert([16 * 1024 * 1024, 32 * 1024 * 1024].includes(profile.flashSize), `invalid flash size for ${profile.key}`);
+    assert([8 * 1024 * 1024, 16 * 1024 * 1024, 32 * 1024 * 1024].includes(profile.flashSize), `invalid flash size for ${profile.key}`);
+    assert(profile.partitionsFile === undefined || /^[a-z0-9_]+$/.test(profile.partitionsFile),
+      `invalid partitions file for ${profile.key}`);
+    assert((profile.flashSize === 8 * 1024 * 1024) === (profile.partitionsFile === 'partitions_8mb'),
+      `8MB flash devices must use partitions_8mb, and only they may for ${profile.key}`);
     assert(typeof profile.publish === 'boolean', `publish must be explicit for ${profile.key}`);
     const s3 = profile.chipFamily === 'ESP32-S3';
     const revision = profile.siliconVariant;

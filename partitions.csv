@@ -4,6 +4,8 @@
 # - Guition JC8012P4A1 and JC1060P470C (16MB flash)
 # - GUITION ESP32-4848S040 (16MB flash)
 # - Waveshare B4 (32MB flash, upper flash remains unused)
+# The Waveshare ESP32-S3-Touch-LCD-7 has only 8MB flash and cannot use this
+# table; see partitions_8mb.csv instead.
 # Name,   Type, SubType, Offset,    Size,      Flags
 nvs,      data, nvs,     0x9000,    0x5000,
 otadata,  data, ota,     0xe000,    0x2000,

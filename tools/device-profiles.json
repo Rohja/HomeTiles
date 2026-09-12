@@ -346,6 +346,29 @@
       }
     },
     {
+      "buildProfile": "waveshare_s3_touch_lcd_7",
+      "key": "waveshare_s3_touch_lcd_7",
+      "metadataDeviceKey": "waveshare_s3_touch_lcd_7",
+      "define": "DEVICE_WAVESHARE_S3_TOUCH_LCD_7",
+      "chipFamily": "ESP32-S3",
+      "flashSize": 8388608,
+      "partitionsFile": "partitions_8mb",
+      "siliconVariant": "default",
+      "minimumRevision": 0,
+      "maximumRevision": 65535,
+      "rxVariant": "native-s3",
+      "elfFlags": "",
+      "publish": true,
+      "ciOrder": 15,
+      "ciLabel": "Waveshare ESP32-S3 Touch LCD 7",
+      "legacySlug": "waveshare-s3-touch-lcd-7",
+      "installer": {
+        "label": "Waveshare ESP32-S3 Touch LCD 7",
+        "status": "validation-pending",
+        "hardwareCheck": "The rear label says ESP32-S3-Touch-LCD-7."
+      }
+    },
+    {
       "buildProfile": "layout_test_1024x600",
       "key": "layout_test_1024x600",
       "metadataDeviceKey": "layout_test_1024x600",

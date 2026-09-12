@@ -185,4 +185,13 @@ export const DEVICE_PROFILES = Object.freeze([
     "status": "validation-pending",
     "hardwareCheck": "The rear label says ESP32-S3-Touch-LCD-4B."
   }),
+  Object.freeze({
+    "key": "waveshare_s3_touch_lcd_7",
+    "buildProfile": "waveshare_s3_touch_lcd_7",
+    "label": "Waveshare ESP32-S3 Touch LCD 7",
+    "chipFamily": "ESP32-S3",
+    "flashSize": 8388608,
+    "status": "validation-pending",
+    "hardwareCheck": "The rear label says ESP32-S3-Touch-LCD-7."
+  }),
 ]);
