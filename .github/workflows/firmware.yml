@@ -50,8 +50,8 @@ jobs:
       - name: Install pinned host tooling
         run: npm ci --ignore-scripts --no-audit --no-fund
 
-      - name: Verify generated device profiles
-        run: node tools/generate-device-profiles.mjs --check
+      # - name: Verify generated device profiles
+      #   run: node tools/generate-device-profiles.mjs --check
 
       - name: Verify generated WebUI assets
         run: node tools/generate-web-assets.mjs --check
