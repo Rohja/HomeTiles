@@ -111,109 +111,109 @@ jobs:
       matrix:
         # BEGIN GENERATED DEVICE MATRIX
         include:
-          - label: M5Stack Tab5
-            profile: tab5
-            key: m5stacks_tab5
-            define: DEVICE_M5STACKS_TAB5
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Waveshare 4B
-            profile: waveshare_b4
-            key: waveshare_4b
-            define: DEVICE_WAVESHARE_4B
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Waveshare Touch LCD 4.3
-            profile: waveshare_4_3
-            key: waveshare_touch_lcd_4_3
-            define: DEVICE_WAVESHARE_TOUCH_LCD_4_3
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Waveshare 7 inch
-            profile: waveshare_7
-            key: waveshare_touch_lcd_7
-            define: DEVICE_WAVESHARE_TOUCH_LCD_7
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Waveshare 7B / 7B-C
-            profile: waveshare_7b
-            key: waveshare_touch_lcd_7b
-            define: DEVICE_WAVESHARE_TOUCH_LCD_7B
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Waveshare 7B / 7B-C (ESP32-P4 rev 3.1 only, experimental)
-            profile: waveshare_7b_rev3_1
-            key: waveshare_touch_lcd_7b_rev3_1
-            metadata_key: waveshare_touch_lcd_7b
-            define: DEVICE_WAVESHARE_TOUCH_LCD_7B
-            silicon_variant: rev3_1
-            rx_variant: repo-a8204
-            publish: true
-          - label: Waveshare 8 inch
-            profile: waveshare_8
-            key: waveshare_touch_lcd_8
-            define: DEVICE_WAVESHARE_TOUCH_LCD_8
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Waveshare 10.1 inch
-            profile: waveshare_10_1
-            key: waveshare_touch_lcd_10_1
-            define: DEVICE_WAVESHARE_TOUCH_LCD_10_1
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Guition JC8012P4A1
-            profile: guition_jc8012p4a1
-            key: guition_jc8012p4a1
-            define: DEVICE_GUITION_JC8012P4A1
-            silicon_variant: pre_v3
-            rx_variant: repo-guition-jc8012-rx-single-block
-            publish: true
-          - label: Guition JC8012P4A1 V2
-            profile: guition_jc8012p4a1_v2
-            key: guition_jc8012p4a1_v2
-            define: DEVICE_GUITION_JC8012P4A1_V2
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Guition JC1060P470C
-            profile: guition_jc1060p470c
-            key: guition_jc1060p470c
-            define: DEVICE_GUITION_JC1060P470C
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: Guition JC1060P470C V2
-            profile: guition_jc1060p470c_v2
-            key: guition_jc1060p470c_v2
-            define: DEVICE_GUITION_JC1060P470C_V2
-            silicon_variant: pre_v3
-            rx_variant: repo-a8204
-            publish: true
-          - label: GUITION ESP32-4848S040
-            profile: guition_esp32_4848s040
-            key: guition_esp32_4848s040
-            define: DEVICE_GUITION_ESP32_4848S040
-            rx_variant: native-s3
-            publish: true
-          - label: Waveshare ESP32-S3 Touch LCD 4 Rev 4.0
-            profile: waveshare_s3_touch_lcd_4
-            key: waveshare_s3_touch_lcd_4
-            define: DEVICE_WAVESHARE_S3_TOUCH_LCD_4
-            rx_variant: native-s3
-            publish: true
-          - label: Waveshare ESP32-S3 Touch LCD 4B
-            profile: waveshare_s3_touch_lcd_4b
-            key: waveshare_s3_touch_lcd_4b
-            define: DEVICE_WAVESHARE_S3_TOUCH_LCD_4B
-            rx_variant: native-s3
-            publish: true
+          # - label: M5Stack Tab5
+          #   profile: tab5
+          #   key: m5stacks_tab5
+          #   define: DEVICE_M5STACKS_TAB5
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Waveshare 4B
+          #   profile: waveshare_b4
+          #   key: waveshare_4b
+          #   define: DEVICE_WAVESHARE_4B
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Waveshare Touch LCD 4.3
+          #   profile: waveshare_4_3
+          #   key: waveshare_touch_lcd_4_3
+          #   define: DEVICE_WAVESHARE_TOUCH_LCD_4_3
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Waveshare 7 inch
+          #   profile: waveshare_7
+          #   key: waveshare_touch_lcd_7
+          #   define: DEVICE_WAVESHARE_TOUCH_LCD_7
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Waveshare 7B / 7B-C
+          #   profile: waveshare_7b
+          #   key: waveshare_touch_lcd_7b
+          #   define: DEVICE_WAVESHARE_TOUCH_LCD_7B
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Waveshare 7B / 7B-C (ESP32-P4 rev 3.1 only, experimental)
+          #   profile: waveshare_7b_rev3_1
+          #   key: waveshare_touch_lcd_7b_rev3_1
+          #   metadata_key: waveshare_touch_lcd_7b
+          #   define: DEVICE_WAVESHARE_TOUCH_LCD_7B
+          #   silicon_variant: rev3_1
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Waveshare 8 inch
+          #   profile: waveshare_8
+          #   key: waveshare_touch_lcd_8
+          #   define: DEVICE_WAVESHARE_TOUCH_LCD_8
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Waveshare 10.1 inch
+          #   profile: waveshare_10_1
+          #   key: waveshare_touch_lcd_10_1
+          #   define: DEVICE_WAVESHARE_TOUCH_LCD_10_1
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Guition JC8012P4A1
+          #   profile: guition_jc8012p4a1
+          #   key: guition_jc8012p4a1
+          #   define: DEVICE_GUITION_JC8012P4A1
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-guition-jc8012-rx-single-block
+          #   publish: true
+          # - label: Guition JC8012P4A1 V2
+          #   profile: guition_jc8012p4a1_v2
+          #   key: guition_jc8012p4a1_v2
+          #   define: DEVICE_GUITION_JC8012P4A1_V2
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Guition JC1060P470C
+          #   profile: guition_jc1060p470c
+          #   key: guition_jc1060p470c
+          #   define: DEVICE_GUITION_JC1060P470C
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: Guition JC1060P470C V2
+          #   profile: guition_jc1060p470c_v2
+          #   key: guition_jc1060p470c_v2
+          #   define: DEVICE_GUITION_JC1060P470C_V2
+          #   silicon_variant: pre_v3
+          #   rx_variant: repo-a8204
+          #   publish: true
+          # - label: GUITION ESP32-4848S040
+          #   profile: guition_esp32_4848s040
+          #   key: guition_esp32_4848s040
+          #   define: DEVICE_GUITION_ESP32_4848S040
+          #   rx_variant: native-s3
+          #   publish: true
+          # - label: Waveshare ESP32-S3 Touch LCD 4 Rev 4.0
+          #   profile: waveshare_s3_touch_lcd_4
+          #   key: waveshare_s3_touch_lcd_4
+          #   define: DEVICE_WAVESHARE_S3_TOUCH_LCD_4
+          #   rx_variant: native-s3
+          #   publish: true
+          # - label: Waveshare ESP32-S3 Touch LCD 4B
+          #   profile: waveshare_s3_touch_lcd_4b
+          #   key: waveshare_s3_touch_lcd_4b
+          #   define: DEVICE_WAVESHARE_S3_TOUCH_LCD_4B
+          #   rx_variant: native-s3
+          #   publish: true
           - label: Waveshare ESP32-S3 Touch LCD 7
             profile: waveshare_s3_touch_lcd_7
             key: waveshare_s3_touch_lcd_7
